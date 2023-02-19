@@ -22,7 +22,7 @@ export class AzureADStrategy extends PassportStrategy(
     }
 
     async validate(data) {
-        console.log(data);
+        console.log('AZURE RES:' + data);
         return data;
     }
 }
