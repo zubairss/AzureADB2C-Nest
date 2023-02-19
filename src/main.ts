@@ -13,7 +13,7 @@ async function bootstrap() {
     app.get<ConfigService<EnvironmentVariables>>(ConfigService);
   const port = configService.get<number>('PORT');
 
-  //TODO - SETUP MARIADB in AZURE & IN APP + TYPEORM CONFIG
+  //TODO - DB UnComment in AppModule
 
   const options = new DocumentBuilder()
     .setTitle('API Docs')
