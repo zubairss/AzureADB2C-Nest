@@ -72,7 +72,6 @@
     "passport": "^0.5.3",
     "passport-azure-ad": "^4.3.4",
     "passport-jwt": "^4.0.0",
-    "pg": "^8.7.3",
     "prettier": "^2.3.2",
     "randomstring": "^1.2.3",
     "reflect-metadata": "^0.1.13",
@@ -80,7 +79,6 @@
     "rxjs": "^7.2.0",
     "source-map-support": "^0.5.20",
     "ssl-root-cas": "^1.3.1",
-    "string-similarity": "^4.0.4",
     "stripe": "^9.8.0",
     "supertest": "^6.1.3",
     "swagger-ui-express": "^4.6.0",
@@ -88,13 +86,10 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.10.1",
-    "twilio": "^3.77.1",
     "typeorm": "^0.3.6",
     "typescript": "^4.3.5",
     "uuid": "^8.3.2",
-    "webpack": "^5.75.0",
-    "winston": "^3.8.2",
-    "winston-aws-cloudwatch": "^3.0.0"
+    "webpack": "^5.75.0"
   },
   "jest": {
     "moduleFileExtensions": [
