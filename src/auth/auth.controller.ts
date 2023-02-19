@@ -16,22 +16,22 @@ export class AuthController {
     return 'UnAuthorized Call.'
   }
 
-  @Post('authA')
+  @Post('authAdmin')
   @AzureAuth()
   auth1() {
-    return 'Auth Call 1'
+    return 'Auth Admin'
   }
 
-  @Post('authB')
+  @Post('authManager')
   @AzureAuth()
   auth2() {
-    return 'Auth Call 2'
+    return 'Auth Manager'
   }
 
-  @Post('authC')
+  @Post('authUser')
   @AzureAuth()
   auth3() {
-    return 'Auth Call 3'
+    return 'Auth User'
   }
 
 
