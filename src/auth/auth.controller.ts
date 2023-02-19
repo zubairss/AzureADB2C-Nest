@@ -8,7 +8,7 @@ import { AzureADGuard } from './azure-ad.strategy';
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService, private readonly configService: ConfigService<EnvironmentVariables>) { }
+  constructor(private readonly authService: AuthService) { }
 
   @Get('unAuth')
   unAuthorized() {
