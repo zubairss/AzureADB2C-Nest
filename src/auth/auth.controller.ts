@@ -12,7 +12,7 @@ export class AuthController {
 
   @Get('unAuth')
   unAuthorized() {
-    return 'UnAuthorized Call'
+    return 'UnAuthorized Call.'
   }
 
   @ApiBearerAuth()
