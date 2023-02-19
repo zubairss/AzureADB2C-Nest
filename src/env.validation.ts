@@ -31,6 +31,45 @@ export class EnvironmentVariables {
 
     @IsString()
     TENANT_ID: string;
+
+    @IsString()
+    TYPEORM_CONNECTION: string;
+
+    @IsString()
+    TYPEORM_HOST: string;
+
+    @IsString()
+    TYPEORM_USERNAME: string;
+
+    @IsString()
+    TYPEORM_PASSWORD: string;
+
+    @IsString()
+    TYPEORM_DATABASE: string;
+
+    @IsNumber()
+    TYPEORM_PORT: number;
+
+    @IsBoolean()
+    TYPEORM_RUN_MIGRATIONS: boolean;
+
+    @IsBoolean()
+    TYPEORM_LOGGING: boolean;
+
+    @IsBoolean()
+    TYPEORM_SYNCHRONIZE: boolean;
+
+    @IsString()
+    TYPEORM_ENTITIES: string;
+
+    @IsString()
+    TYPEORM_MIGRATIONS: string;
+
+    @IsString()
+    TYPEORM_MIGRATIONS_DIR: string;
+
+    @IsString()
+    TYPEORM_DRIVER_EXTRA: string;
 }
 
 export function validate(config: Record<string, unknown>) {

@@ -1,12 +1,14 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { EnvironmentVariables } from 'src/env.validation';
 import { AuthService } from './auth.service';
 import { AzureADGuard } from './azure-ad.strategy';
 
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService, private readonly configService: ConfigService<EnvironmentVariables>) { }
 
   @Get('unAuth')
   unAuthorized() {

@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { ErrorInterceptor } from './common/error.interceptor';
 import rawBodyMiddleware from './common/middleware/rawBody.middleware';
 import { EnvironmentVariables } from './env.validation';
 
@@ -12,8 +13,6 @@ async function bootstrap() {
   const configService =
     app.get<ConfigService<EnvironmentVariables>>(ConfigService);
   const port = configService.get<number>('PORT');
-
-  //TODO - DB UnComment in AppModule
 
   const options = new DocumentBuilder()
     .setTitle('API Docs')
@@ -33,6 +32,7 @@ async function bootstrap() {
     forbidNonWhitelisted: true,
     transformOptions: { enableImplicitConversion: true },
   }))
+  app.useGlobalInterceptors(new ErrorInterceptor())
   app.enableCors();
   await app.listen(port);
 

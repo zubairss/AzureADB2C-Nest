@@ -13,7 +13,7 @@ export class DatabaseConfiguration implements TypeOrmOptionsFactory {
             // logging: process.env.TYPEORM_LOGGING === 'true',
             // synchronize: true, //process.env.TYPEORM_SYNCHRONIZE === 'true',
             autoLoadEntities: true,
-            migrationsRun: true,
+            migrationsRun: true /* process.env.TYPEORM_MIGRATIONS */,
             entities: ['dist/*/.entity.js'],
             migrations: ['dist/migration/*/.js'],
             // extra: JSON.parse(process.env.TYPEORM_DRIVER_EXTRA),
