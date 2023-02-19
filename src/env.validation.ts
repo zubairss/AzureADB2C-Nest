@@ -25,6 +25,12 @@ export class EnvironmentVariables {
 
     @IsEnum(AppEnvironment)
     NODE_ENV: AppEnvironment;
+
+    @IsString()
+    CLIENT_ID: string;
+
+    @IsString()
+    TENANT_ID: string;
 }
 
 export function validate(config: Record<string, unknown>) {

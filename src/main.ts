@@ -5,15 +5,14 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import rawBodyMiddleware from './common/middleware/rawBody.middleware';
 import { EnvironmentVariables } from './env.validation';
-import * as dotenv from 'dotenv';
-dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   app.use(rawBodyMiddleware());
-  const configService = app.get<ConfigService<EnvironmentVariables>>(ConfigService);
-  const port = configService.get<number>('PORT')
-  //TODO - FIX CONFIG SERVICE
+  const configService =
+    app.get<ConfigService<EnvironmentVariables>>(ConfigService);
+  const port = configService.get<number>('PORT');
+
   //TODO - SETUP MARIADB in AZURE & IN APP + TYPEORM CONFIG
 
   const options = new DocumentBuilder()
