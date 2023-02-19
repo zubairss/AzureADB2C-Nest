@@ -20,7 +20,6 @@ async function bootstrap() {
     .setTitle('API Docs')
     .setDescription('API backend (NestJS)')
     .setVersion(`${process.env.NODE_ENV}`)
-    .addServer('/api')
     .addBearerAuth()
     .addTag('health', 'Quickly returns the operational status of application')
     .build();
