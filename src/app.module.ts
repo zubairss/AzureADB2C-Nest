@@ -9,10 +9,9 @@ import { validate } from './env.validation';
 
 @Module({
   imports: [ConfigModule.forRoot({ isGlobal: true, expandVariables: true, validate }), AuthModule,
-    // TypeOrmModule.forRootAsync({
-    // useClass: DatabaseConfiguration,
-    // })
-    // TODO UNCOMMENT ^^
+  TypeOrmModule.forRootAsync({
+    useClass: DatabaseConfiguration,
+  })
   ],
   controllers: [AppController],
   providers: [AppService],

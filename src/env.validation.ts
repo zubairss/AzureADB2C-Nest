@@ -8,7 +8,7 @@ import {
     validateSync,
 } from 'class-validator';
 
-enum AppEnvironment {
+export enum AppEnvironment {
     Development = 'development',
     Production = 'production',
     Test = 'test',
@@ -21,16 +21,31 @@ enum Database {
 
 export class EnvironmentVariables {
     @IsNumber()
-    PORT: number;
+    NODE_PORT: number;
 
     @IsEnum(AppEnvironment)
     NODE_ENV: AppEnvironment;
 
     @IsString()
-    CLIENT_ID: string;
+    AD_B2C_CLIENT_ID: string;
 
     @IsString()
-    TENANT_ID: string;
+    AD_B2C_TENANT_ID: string;
+
+    @IsString()
+    AD_B2C_EXTENSION_APP_ID: string;
+
+    @IsString()
+    READYON_ADMIN_EMAILS: string;
+
+    @IsString()
+    AD_B2C_POLICY_NAME: string;
+
+    @IsString()
+    AD_B2C_TENANT_NAME: string;
+
+    @IsString()
+    AD_B2C_CLIENT_SECRET_VALUE: string;
 
     @IsString()
     TYPEORM_CONNECTION: string;

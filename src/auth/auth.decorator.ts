@@ -5,8 +5,18 @@ import { AzureADGuard } from "./azure-ad.strategy"
 import { Roles } from "./roles.decorator"
 import { RolesGuard } from "./roles.guard"
 
-export const AzureAuth = (...roles: Array<UserRoles>) => applyDecorators(
-    ApiBearerAuth(),
-    UseGuards(AzureADGuard, RolesGuard),
-    Roles(...roles),
-);
+export const AzureAuth = (...roles: Array<UserRoles>) => {
+
+    if (roles.length > 0) {
+        return applyDecorators(
+            ApiBearerAuth(),
+            UseGuards(AzureADGuard, RolesGuard),
+            Roles(...roles),);
+    }
+
+    return applyDecorators(
+        ApiBearerAuth(),
+        UseGuards(AzureADGuard)
+    )
+}
+
